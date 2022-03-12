@@ -1,65 +1,191 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts/app')
 
-        <title>Laravel</title>
+@section('content')
+    <div class="mx-auto mx-4 bg-white px-2 py-3 rounded-lg border-2 border-b-blue-200 shadow-xl">
+        <h1 class="text-3xl text-center font-bold items-center tracking-tight text-blue-400">Inventory Management System</h1>
+    </div>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    {{-- <table id="" style="width:100%" class="mx-auto mx-4 mt-3 display border border-slate-400 rounded-lg text-gray-400 table-auto bg-white">
+        <thead>
+          <tr>
+            <th class="border border-slate-300">#</th>
+            <th class="border border-slate-300">Item Name</th>
+            <th class="border border-slate-300">Code</th>
+            <th class="border border-slate-300">Serial No</th>
+            <th class="border border-slate-300">Processor</th>
+            <th class="border border-slate-300">HDD Capacity</th>
+            <th class="border border-slate-300">HDD Health</th>
+            <th class="border border-slate-300">Windows</th>
+            <th class="border border-slate-300">Department</th>
+            <th class="border border-slate-300">Comment</th>
+            <th class="border border-slate-300">Next Maintenance</th>
+            <th class="border border-slate-300">UPS Info</th>
+            {{-- <th class="border border-slate-300">Status</th> --}}
+            {{-- <th class="border border-slate-300">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-slate-300">1</td>
+            <td class="border border-slate-300">Dell Desktop computer</td>
+            <td class="border border-slate-300">CHUK/D1424</td>
+            <td class="border border-slate-300">serial</td>
+            <td class="border border-slate-300">i5@3.2GHZ</td>
+            <td class="border border-slate-300">500 GB</td>
+            <td class="border border-slate-300">4 GB</td>
+            <td class="border border-slate-300">win 10</td>
+            <td class="border border-slate-300">ICT</td>
+            <td class="border border-slate-300">...</td>
+            <td class="border border-slate-300">03/05/2022</td>
+            <td class="border border-slate-300">Connected</td> --}}
+            {{-- <td class="border border-slate-300">In Service</td> --}}
+            {{-- <td class="border border-slate-300 flex md:flex-row px-4">
+                <a href="" class="mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                </a>
+              
+                <a href="" class="mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                    </svg> 
+                </a>
+                <a href="" class="mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                    </svg>
+                </a>
+            </td>
+          </tr>
+          
+        </tbody> --}}
+      {{-- </table> --}} 
+      <div class=" mx-auto">
+        <div class="flex flex-col">
+            <div class="w-full">
+                <div class="p-4 border-b border-gray-200 shadow">
+                    <!-- <table> -->
+                    <table id="example" class="p-4">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-8 text-xs text-gray-500">
+                                    ID
+                                </th>
+                                <th class="p-8 text-xs text-gray-500">
+                                    Name
+                                </th>
+                                <th class="p-8 text-xs text-gray-500">
+                                    Email
+                                </th>
+                                <th class="p-8 text-xs text-gray-500">
+                                    Created_at
+                                </th>
+                                <th class="px-6 py-2 text-xs text-gray-500">
+                                    Edit
+                                </th>
+                                <th class="px-6 py-2 text-xs text-gray-500">
+                                    Delete
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                            <tr class="whitespace-nowrap">
+                                <td class="px-6 py-4 text-sm text-center text-gray-500">
+                                    1
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-sm text-gray-900">
+                                        Jon doe 1
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-sm text-gray-500">jhondoe@example.com</div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-center text-gray-500">
+                                    2021-1-12
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <a href="#" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <a href="#" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
+                                </td>
+                            </tr>
+                            <tr class="whitespace-nowrap">
+                                <td class="px-6 py-4 text-sm text-center text-gray-500">
+                                    2
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-sm text-gray-900">
+                                        Jon doe 2
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-sm text-gray-500">jhondoe@example.com</div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-center text-gray-500">
+                                    2021-1-12
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <a href="#" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <a href="#" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
+                                </td>
+                            </tr>
+                            <tr class="whitespace-nowrap">
+                                <td class="px-6 py-4 text-sm text-center text-gray-500">
+                                    3
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-sm text-gray-900">
+                                        Jon doe 3
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-sm text-gray-500">jhondoe@example.com</div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-center text-gray-500">
+                                    2021-1-12
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <a href="#" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <a href="#" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
+                                </td>
+                            </tr>
 
-        <script src="https://cdn.tailwindcss.com"></script>
-        {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-        <link rel="icon" href="">
-    </head>
-    <body class="bg-blue-300">        
-        <nav class="bg-blue-400 border-blue-200 px-2 sm:px-4 py-2.5 rounded-lg text-blue-100">
-            <div class="container flex flex-wrap justify-between items-center mx-auto">
-            <a href="/" class="flex items-center">
-            
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">IMS</span>
-            </a>
-            <div class="flex items-center md:order-2">
-                <button type="button" class="flex mr-3 text-sm   md:mr-0 " id="user-menu-button" aria-expanded="false" >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                      </svg> 
-                  Login
-                </button>
-            
-            <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-blue-100 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </button>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
-            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-            <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
-            </li>
-            <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-blue-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-blue-100 dark:hover:text-white md:dark:hover:bg-transparent ">About</a>
-            </li>
-            <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-blue-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-blue-100 dark:hover:text-white md:dark:hover:bg-transparent ">Services</a>
-            </li>
-            <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-blue-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-blue-100 dark:hover:text-white md:dark:hover:bg-transparent ">Pricing</a>
-            </li>
-            <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-blue-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-blue-100 dark:hover:text-white md:dark:hover:bg-transparent ">Contact</a>
-            </li>
-            </ul>
-            </div>
-            </div>
-        </nav>
-    
-    </body>
-</html>
+        </div>
+    </div>
+@endsection
+
+@section('datatableCss')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+@endsection
+@section('datatableJs')
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            } );
+        } );
+    </script>
+@endsection
