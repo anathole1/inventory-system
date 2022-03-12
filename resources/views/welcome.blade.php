@@ -1,9 +1,10 @@
 @extends('layouts/app')
 
 @section('content')
-    <div class="mx-auto mx-4 bg-white px-2 py-3 rounded-lg border-2 border-b-blue-200 shadow-xl">
-        <h1 class="text-3xl text-center font-bold items-center tracking-tight text-blue-400">Inventory Management System</h1>
-    </div>
+<div class="container-fluid">
+    <h1 class="text-3xl font-bold text-center text-blue-400">Welcome to Inventory Management System</h1>
+</div>
+
 
     {{-- <table id="" style="width:100%" class="mx-auto mx-4 mt-3 display border border-slate-400 rounded-lg text-gray-400 table-auto bg-white">
         <thead>
@@ -61,131 +62,5 @@
           
         </tbody> --}}
       {{-- </table> --}} 
-      <div class=" mx-auto">
-        <div class="flex flex-col">
-            <div class="w-full">
-                <div class="p-4 border-b border-gray-200 shadow">
-                    <!-- <table> -->
-                    <table id="example" class="p-4">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="p-8 text-xs text-gray-500">
-                                    ID
-                                </th>
-                                <th class="p-8 text-xs text-gray-500">
-                                    Name
-                                </th>
-                                <th class="p-8 text-xs text-gray-500">
-                                    Email
-                                </th>
-                                <th class="p-8 text-xs text-gray-500">
-                                    Created_at
-                                </th>
-                                <th class="px-6 py-2 text-xs text-gray-500">
-                                    Edit
-                                </th>
-                                <th class="px-6 py-2 text-xs text-gray-500">
-                                    Delete
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white">
-                            <tr class="whitespace-nowrap">
-                                <td class="px-6 py-4 text-sm text-center text-gray-500">
-                                    1
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <div class="text-sm text-gray-900">
-                                        Jon doe 1
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <div class="text-sm text-gray-500">jhondoe@example.com</div>
-                                </td>
-                                <td class="px-6 py-4 text-sm text-center text-gray-500">
-                                    2021-1-12
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <a href="#" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <a href="#" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
-                                </td>
-                            </tr>
-                            <tr class="whitespace-nowrap">
-                                <td class="px-6 py-4 text-sm text-center text-gray-500">
-                                    2
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <div class="text-sm text-gray-900">
-                                        Jon doe 2
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <div class="text-sm text-gray-500">jhondoe@example.com</div>
-                                </td>
-                                <td class="px-6 py-4 text-sm text-center text-gray-500">
-                                    2021-1-12
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <a href="#" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <a href="#" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
-                                </td>
-                            </tr>
-                            <tr class="whitespace-nowrap">
-                                <td class="px-6 py-4 text-sm text-center text-gray-500">
-                                    3
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <div class="text-sm text-gray-900">
-                                        Jon doe 3
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <div class="text-sm text-gray-500">jhondoe@example.com</div>
-                                </td>
-                                <td class="px-6 py-4 text-sm text-center text-gray-500">
-                                    2021-1-12
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <a href="#" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <a href="#" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
-
-@section('datatableCss')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
-@endsection
-@section('datatableJs')
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable( {
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
-            } );
-        } );
-    </script>
+    
 @endsection
